@@ -1,0 +1,25 @@
+.about-section {
+    padding: 60px 50px;
+    background: white;
+    text-align: center;
+  }
+  
+  .about-title {
+    color: #2563eb;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .about-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #000000;
+  }
+  
+  .about-description {
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  

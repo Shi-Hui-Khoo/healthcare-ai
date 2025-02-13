@@ -1,0 +1,50 @@
+.main-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    background: #f0f7ff;
+  }
+  
+  .main-content {
+    max-width: 50%;
+  }
+  
+  .sub-title {
+    color: #2563eb;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .main-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #000000;
+  }
+  
+  .highlight {
+    color: #2563eb;
+  }
+  
+  .description {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .appointment-btn {
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .main-image {
+    width: 50%;
+    height: 400px;
+    max-width: 50%;
+    /*background: url('./images/hospital.png') no-repeat center/cover;*/
+  }
+  

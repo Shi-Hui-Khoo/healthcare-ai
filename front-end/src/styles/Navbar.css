@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-grow: 1; /* Allows the nav links to take up available space */
+    justify-content: center; /* Centers the links */
+    gap: 40px; /* Increases spacing between links */
+}
+
+.nav-links li {
+    cursor: pointer;
+    color: #444;
+    transition: color 0.3s;
+    font-size: 16px; /* Ensure readable size */
+}
+
+.nav-links li:hover {
+    color: #2563eb;
+}
+
+.call-button {
+    background: #2563eb;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto; /* Pushes the button to the right */
+}
