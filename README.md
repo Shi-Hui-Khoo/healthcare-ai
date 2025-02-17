@@ -1,10 +1,25 @@
 # MyCareMate
-MyCareMate is a conversational AI-powered appointment booking system for healthcare providers. Patients can schedule appointments using natural language, and AI agents optimizes availability and provides personalized recommendations. Integrated with persistent storage to streamline administrative tasks and improve patient experience.
   
-<img src="./agent_workflow.jpg" alt="img" width="600"/>
+This repository contains an implementation of agentic ai for healthcare use cases created for Agentic AI Hackathon. 
+  
+**Overview**
+-----------
+MyCareMate is a conversational AI-powered appointment booking system for healthcare providers. Patients can schedule appointments using natural language, and AI agents optimizes availability and provides personalized recommendations. Integrated with persistent storage to streamline administrative tasks and improve patient experience.  
+  
+  
+**Architecture**
+-----------
+  
+This project consist of two major parts, backend + frontend. The front end uses NodeJs+Vue framework. Meanwhile the backend consist of FastAPI, CrewAI and Watsonx.
+  
+<img src="./agent_workflow.png" alt="img" width="650"/>
+<img src="./functional_architecture.png" alt="img" width="650"/>  
+<br/> <br/>  
 
-# Getting started
-## Front End
+### How to Use This Project
+-----------------------------
+#### Front End  
+  
 From root go to frontend dir
 ```
 cd front-end
@@ -25,7 +40,8 @@ podman build -t healthcare_fe .
 podman run --name healthcare_fe --rm -p 8080:8080 healthcare_fe
 ```
 
-## Back End
+#### Back End
+  
 From root go to backend healthcare dir
 ```
 cd back-end/healthcare
