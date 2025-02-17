@@ -1,0 +1,51 @@
+get_medical_reference:
+  description: >
+    conversations\n
+    -------------\n
+    {conversation}
+    -------------\n
+    Based on symptoms describe in conversation, use the tool to match relevant medical condition.
+    Make sure to include all information from extracted csv.
+  expected_output: >
+    Return text in csv format.
+  agent: csv_agent
+
+classify_illness_task:
+  description: >
+    conversations\n
+    -------------\n
+    {conversation}
+    -------------\n
+    Review the patient's symptoms describe in conversation and identify potential illness the patient's is having 
+    based on provided medical condition reference extracted.
+    Make sure to provide the illness name with brief description. For example "Eczema - itchiness on skin indicates..."
+  expected_output: >
+    Return text ONLY without any quotes.
+  agent: medical_assistant
+
+get_suggested_doctor:
+  description: >
+    Based on classified illness, use the tool to extract doctors with relevant specialization.
+    Make sure to include all information from extracted csv.
+  expected_output: >
+    Return text in csv format.
+  agent: csv_agent
+
+# assign_doctor_task:
+#   description: >
+#     Assign the right doctor for the patients based on identified illness and doctor's specialization provided above.
+#   expected_output: >
+#     A list of doctors name to treat the patients seperated with new lines.
+#   agent: medical_assistant
+
+get_doctor_timeslot_task:
+  description: >
+    Based on the doctors extracted. Extract doctors' timeslot based on their id.
+    Using the extracted and combined information, suggest available timeslot to user.
+    Reform the information as question to the user to get their preferred timeslot without mentioning their illness.
+    Briefly mention the doctor is an expert to treat the symptoms.
+    Make sure to return information ONLY from extracted CSV not your general knowledge.
+  expected_output: >
+    Return text with bullet points. For example "Based on doctor's expertise, I recommend the following doctor for your consultation. They are experienced in treating symptoms like itchy, flaky skin. Here's dermatology doctors available: * Dr Karim (2PM-4PM) ..."
+  agent: csv_agent
+

@@ -1,0 +1,23 @@
+[project]
+name = "healthcare"
+version = "0.1.0"
+description = "healthcare using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.102.0,<1.0.0",
+    "ibm-watson-machine-learning>=1.0.367",
+    "langchain-ibm>=0.3.6",
+    "ollama>=0.4.7",
+]
+
+[project.scripts]
+kickoff = "healthcare.main:kickoff"
+plot = "healthcare.main:plot"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "flow"

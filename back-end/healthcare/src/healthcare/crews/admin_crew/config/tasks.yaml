@@ -1,0 +1,64 @@
+route_task:
+  description: >
+    conversations\n
+    -------------\n
+    {conversation}
+    -------------\n
+
+    Review the conversation with the user above and identified missing information required to proceed with doctor's appointment.
+    You must return either one of the following - ['symptoms','background','clarify','schedule','complete']
+    The instruction for each of the item is as follows:
+    clarify - return this when the latest user's information is not enough or not understandable.
+    symptoms - return this when symptoms of illness has NOT been describe in conversation.
+    background - return this when name, age, gender, insurance name and phone number does NOT exist in conversation.
+    schedule - return this  when other information is completed and it's time to proceed with scheduling appointment with doctor.
+    complete - return this when schedule, symptoms and background from above has been all identified.
+  expected_output: >
+    Return text ONLY without any quotes.
+  agent: healthcare_admin
+
+collect_task:
+  description: >
+    {context}
+    Your task is to collect {task} information. Based on the conversation and guidelines provided, return a question to request information from the user. You must ask one question at a time.
+    Guidelines:
+    symptoms - question about user's health issues he or her is facing.
+    background - make sure request for name, age, gender, insurance name, and phone number.
+    schedule - request prefered time.
+    clarify - rephrase your question. you can refer to latest question in conversation.
+  expected_output: >
+    Return text ONLY without any quotes.
+  agent: healthcare_admin
+
+extract_task:
+  description: >
+    conversations\n
+    -------------\n
+    {conversation}
+    -------------\n
+    Your task is to extract the symptoms, name, age, gender, insurance name, doctor's name and appointment time from the conversation.
+
+  expected_output: >
+    Return in JSON string format with following keys ['user_name', 'age','gender', 'insurance_name', 'dr_name', 'appt_time'].
+    If the information doesn't exist use null value as placeholder.
+  agent: appointment_admin
+
+update_task:
+  description: >
+    Based on extracted information in JSON, your task is to update csv using csv update tool provided. 
+    You will need to pass the JSON string as input parameter.
+
+  expected_output: >
+    Return in text 'success' or 'fail' based on the result of using the tool.
+    Provide any information return by the tool function as well.
+  agent: appointment_admin
+
+summarize_task:
+  description: >
+    Based on extracted information in JSON, your task is to summarize the booked appointment for the user.
+    Make is as brief as impossible but do not leave out important information.
+    Put reminder for user as you see necessary such as 'Please come 15min earlier to be ready'
+
+  expected_output: >
+    Return in text and use bullet points where suitable.
+  agent: healthcare_admin
