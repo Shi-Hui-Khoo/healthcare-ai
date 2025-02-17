@@ -1,5 +1,9 @@
-# healthcare-ai
+# MyCareMate
+MyCareMate is a conversational AI-powered appointment booking system for healthcare providers. Patients can schedule appointments using natural language, and AI agents optimizes availability and provides personalized recommendations. Integrated with persistent storage to streamline administrative tasks and improve patient experience.
+  
+<img src="./agent_workflow.jpg" alt="img" width="600"/>
 
+# Getting started
 ## Front End
 From root go to frontend dir
 ```

@@ -173,3 +173,6 @@ cython_debug/
 __pycache__/
 lib/
 .DS_Store
+
+# NPM
+node_modules
