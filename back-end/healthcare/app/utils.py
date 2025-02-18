@@ -1,8 +1,8 @@
 from pydantic import BaseModel
 from typing import Any, Mapping, List
 
-class Request(BaseModel):
+class AgentRequest(BaseModel):
     history: List[Mapping[str, Any]] = None
 
-class Response(BaseModel):
+class AgentResponse(BaseModel):
     response: str = None
