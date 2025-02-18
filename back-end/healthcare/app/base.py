@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import HTMLResponse
 import requests
 from .utils import Request, Response
 from src.healthcare.flows.flow import RouterFlow
 import os 
+import pandas as pd
 
 router = APIRouter()
 flow = RouterFlow()
@@ -18,6 +19,26 @@ LIMIT_WINDOW = 15
 # @router.get("/main")
 # async def page_main():
 #     return FileResponse('static/main.html')
+
+@router.get("/csv/patient", response_class=HTMLResponse)
+async def read_patient():
+    df = pd.read_csv("knowledge/patient.csv")
+    return df.to_html()
+
+@router.get("/csv/doctor", response_class=HTMLResponse)
+async def read_patient():
+    df = pd.read_csv("knowledge/doctor.csv")
+    return df.to_html()
+
+@router.get("/csv/timeslot", response_class=HTMLResponse)
+async def read_patient():
+    df = pd.read_csv("knowledge/doctor_timeslot.csv")
+    return df.to_html()
+
+@router.get("/csv/appointment")
+async def read_patient():
+    df = pd.read_csv("knowledge/appointment.csv")
+    return df.to_html()
 
 @router.post("/api/agent_flow")
 def flow(request: Request) -> Response:

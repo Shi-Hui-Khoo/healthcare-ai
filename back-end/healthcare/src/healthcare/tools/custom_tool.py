@@ -29,7 +29,7 @@ class UpdateCSV(BaseTool):
         try:
             
             #Update user csv
-            user_csv_path = "/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/patient.csv"
+            user_csv_path = "knowledge/patient.csv"
             user_df = pd.read_csv(user_csv_path)
             patient_id = str(len(user_df)+1)
             
@@ -38,9 +38,9 @@ class UpdateCSV(BaseTool):
             user_df.to_csv(user_csv_path, index=False)
 
             #Update appt csv
-            appt_csv_path = "/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/appointment.csv"
+            appt_csv_path = "knowledge/appointment.csv"
             appt_df = pd.read_csv(appt_csv_path)
-            dr_df = pd.read_csv("/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/doctor.csv")
+            dr_df = pd.read_csv("knowledge/doctor.csv")
             doctor_id = dr_df[dr_df.doctor_name.str.strip() == 'Dr. John Smith'].doctor_id.iloc[0]
             doctor_id = str(doctor_id)
             #columns - appointment_id,doctor_id,patient_id,patient_symptom,insurance,date,time
@@ -48,7 +48,7 @@ class UpdateCSV(BaseTool):
             appt_df.to_csv(appt_csv_path, index=False)
 
             #Update timeslot csv
-            timeslot_csv_path = "/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/doctor_timeslot.csv"
+            timeslot_csv_path = "knowledge/doctor_timeslot.csv"
             timeslot_df = pd.read(timeslot_csv_path)
             # columns - doctor_id,date,time
             # removes available timeslot

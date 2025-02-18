@@ -2,8 +2,6 @@ from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import CSVSearchTool
 
-from langchain_ibm import WatsonxLLM
-from ibm_watson_machine_learning.foundation_models import Model
 from dotenv import load_dotenv, find_dotenv
 
 import pandas as pd
@@ -32,33 +30,6 @@ function_calling_llm = LLM(
     apikey=os.getenv("WATSONX_API_KEY", None),
 )
 
-# llm = WatsonxLLM(
-#     model_id="meta-llama/llama-3-70b-instruct",
-#     url="https://us-south.ml.cloud.ibm.com",
-#     params=parameters,
-#     project_id=os.getenv("WATSONX_PROJECT_ID", None),
-# )
-# llm = Model(
-#     model_id="meta-llama/llama-3-70b-instruct",
-#     credentials={
-#         "url": "https://us-south.ml.cloud.ibm.com",
-#         "apikey": os.getenv("WATSONX_APIKEY", None),
-#     },
-#     project_id=os.getenv("WATSONX_PROJECT_ID", None),
-#     params=parameters,
-# )
-
-# # Create the function calling llm
-# function_calling_llm = Model(
-#     model_id="ibm-mistralai/merlinite-7b",
-#     credentials={
-#         "url": "https://us-south.ml.cloud.ibm.com",
-#         "apikey": os.getenv("WATSONX_APIKEY", None),
-#     },
-#     project_id=os.getenv("WATSONX_PROJECT_ID", None),
-#     params=parameters,
-# )
-
 # llm = LLM(
 #     model="ollama/llama3:70b",
 #     base_url="http://localhost:11434"
@@ -78,13 +49,13 @@ class MedicalCrew:
 
     #tools
     medical_condition_reference = CSVSearchTool(
-        csv="/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/medical_condition.csv",
+        csv="knowledge/medical_condition.csv",
         config=dict(
             llm=dict(
                 provider="ollama",  # or google, openai, anthropic, llama2, ...
                 config=dict(
                     model="llama3",
-                    base_url='http://localhost:11434'
+                    base_url='http://0.0.0.0:11434'
                     # temperature=0.5,
                     # top_p=1,
                     # stream=true,
@@ -101,13 +72,13 @@ class MedicalCrew:
         ),
     )
     suggested_doctor = CSVSearchTool(
-        csv="/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/doctor.csv",
+        csv="knowledge/doctor.csv",
         config=dict(
             llm=dict(
                 provider="ollama",  # or google, openai, anthropic, llama2, ...
                 config=dict(
                     model="llama3",
-                    base_url='http://localhost:11434'
+                    base_url='http://0.0.0.0:11434'
                     # temperature=0.5,
                     # top_p=1,
                     # stream=true,
@@ -125,13 +96,13 @@ class MedicalCrew:
     )
 
     timeslot = CSVSearchTool(
-        csv="/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/doctor_timeslot.csv",
+        csv="knowledge/doctor_timeslot.csv",
         config=dict(
             llm=dict(
                 provider="ollama",  # or google, openai, anthropic, llama2, ...
                 config=dict(
                     model="llama3",
-                    base_url='http://localhost:11434'
+                    base_url='http://0.0.0.0:11434'
                     # temperature=0.5,
                     # top_p=1,
                     # stream=true,
