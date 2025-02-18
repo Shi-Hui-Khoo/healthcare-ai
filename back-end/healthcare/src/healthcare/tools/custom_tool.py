@@ -14,7 +14,7 @@ class Appointment(BaseModel):
 
 class UpdateCSV(BaseTool):
     name: str = "csv_update"
-    essential_keys: List[str] = ['user_name', 'age','gender', 'insurance_name', 'dr_name', 'appt_time']
+    essential_keys: List[str] = ['user_name', 'age','gender', 'insurance_name', 'symptoms', 'dr_name', 'appt_date','appt_time']
     description: str = (
         "This is used to update csv using pandas based on provided dictionary. The keys in the dictionary will be determine to which columns or csv updated."
     )
@@ -27,19 +27,35 @@ class UpdateCSV(BaseTool):
         print("Missing information - ",missing_keys)
         # Implementation goes here
         try:
+            
             #Update user csv
             user_csv_path = "/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/patient.csv"
             user_df = pd.read_csv(user_csv_path)
-            # columns
-            # patient_id,patient_name,age,email,phone
-            user_df.loc[len(user_df)] = [str(len(user_df)+1), info['user_name'], info['age'], "sample@email.com", "0123478910"]
+            patient_id = str(len(user_df)+1)
+            
+            # columns - patient_id,patient_name,age,email,phone
+            user_df.loc[len(user_df)] = [patient_id, info['user_name'], info['age'], "sample@email.com", "012347xxxx"]
             user_df.to_csv(user_csv_path, index=False)
-            # #Update appt csv
-            # appt_df = pd.read("/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/appointment.csv")
 
-            # #Update timeslot csv
-            # timeslot_df = pd.read("/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/doctor_timeslot.csv")
+            #Update appt csv
+            appt_csv_path = "/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/appointment.csv"
+            appt_df = pd.read_csv(appt_csv_path)
+            dr_df = pd.read_csv("/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/doctor.csv")
+            doctor_id = dr_df[dr_df.doctor_name.str.strip() == 'Dr. John Smith'].doctor_id.iloc[0]
+            doctor_id = str(doctor_id)
+            #columns - appointment_id,doctor_id,patient_id,patient_symptom,insurance,date,time
+            appt_df.loc[len(appt_df)] = [patient_id, doctor_id, info['symptoms'], info['insurance_name'], info['appt_dat'], info['appt_time']]
+            appt_df.to_csv(appt_csv_path, index=False)
 
+            #Update timeslot csv
+            timeslot_csv_path = "/Users/ammarsyatbi/repo/healthive-hackathon/healthcare/knowledge/doctor_timeslot.csv"
+            timeslot_df = pd.read(timeslot_csv_path)
+            # columns - doctor_id,date,time
+            # removes available timeslot
+            timeslot_df = timeslot_df[~(timeslot_df.doctor_id.astype(str) == doctor_id) & 
+                        (timeslot_df.date == info['appt_date']) & 
+                        (timeslot_df.time == info['appt_time'])]
+            timeslot_df.to_csv(timeslot_csv_path, index=False)
 
             return "All csv has been updated."
         except Exception as e:

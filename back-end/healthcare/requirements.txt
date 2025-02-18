@@ -1,0 +1,5 @@
+crewai==0.102.0
+crewai-tools==0.36.0
+ollama==0.4.7
+ibm_watson_machine_learning==1.0.367
+fastapi==0.115.8

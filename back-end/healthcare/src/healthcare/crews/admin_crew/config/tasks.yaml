@@ -36,10 +36,12 @@ extract_task:
     -------------\n
     {conversation}
     -------------\n
-    Your task is to extract the symptoms, name, age, gender, insurance name, doctor's name and appointment time from the conversation.
-
+    Your task is to extract the symptoms, name, age, gender, symptoms, insurance name, doctor's name, appointment date and appointment time from the conversation.
+    Make sure the appointment date follows dd/mm/yyy. For example '12/02/2025'
+    Make sure the appointment time follows this sample format '11:00 AM'
+    Do transformation where necessary.
   expected_output: >
-    Return in JSON string format with following keys ['user_name', 'age','gender', 'insurance_name', 'dr_name', 'appt_time'].
+    Return in JSON string format with following keys ['user_name', 'age','gender', 'insurance_name', 'symptoms', 'dr_name', 'appt_date','appt_time'].
     If the information doesn't exist use null value as placeholder.
   agent: appointment_admin
 

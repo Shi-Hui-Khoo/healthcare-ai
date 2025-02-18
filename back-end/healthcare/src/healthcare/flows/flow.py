@@ -1,8 +1,8 @@
 from pydantic import BaseModel
 from typing import Any, Mapping, List
 from crewai.flow import Flow, listen, start
-from healthcare.crews.admin_crew.admin_crew import AdminCrew
-from healthcare.crews.medical_crew.medical_crew import MedicalCrew
+from crews.admin_crew.admin_crew import AdminCrew
+from crews.medical_crew.medical_crew import MedicalCrew
 
 class CollectState(BaseModel):
     route: str | None = None
