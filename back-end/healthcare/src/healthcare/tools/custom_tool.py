@@ -44,7 +44,7 @@ class UpdateCSV(BaseTool):
             doctor_id = dr_df[dr_df.doctor_name.str.strip() == info['dr_name'] ].doctor_id.iloc[0]
             doctor_id = str(doctor_id)
             #columns - appointment_id,doctor_id,patient_id,patient_symptom,insurance,date,time
-            appt_df.loc[len(appt_df)] = [patient_id, doctor_id, info['symptoms'], info['insurance_name'], info['appt_dat'], info['appt_time']]
+            appt_df.loc[len(appt_df)] = [patient_id, doctor_id, info['symptoms'], info['insurance_name'], "12/02/2025", info['appt_time']]
             appt_df.to_csv(appt_csv_path, index=False)
 
             #Update timeslot csv

@@ -1,0 +1,14 @@
+﻿medical_condition_name,medical_condition_description,specialization 
+Otitis Media,"Ear pain, fever, hearing loss, ear fullness, or discharge.",ENT 
+Nasal Polyps,"Nasal congestion, loss of smell, facial pain, or difficulty breathing.",ENT 
+Vocal Cord Nodules,"Hoarse voice, vocal strain, or difficulty speaking.",ENT 
+Sinus Headaches,"Headaches, facial pain, or pressure in the cheeks and forehead.",ENT 
+Hearing Loss,"Difficulty hearing, ringing in the ears, or feeling like ears are plugged.",ENT 
+Hypertension,"Headaches, dizziness, nosebleeds, or shortness of breath.",Cardiology 
+Cardiomyopathy,"Shortness of breath, fatigue, swelling in the legs, or rapid heartbeat.",Cardiology 
+Peripheral Artery Disease,"Leg pain, cramping, or weakness when walking.",Cardiology 
+Deep Vein Thrombosis,"Swelling, pain, or warmth in the legs, or difficulty walking.",Cardiology 
+Pulmonary Embolism,"Chest pain, shortness of breath, or coughing up blood.",Cardiology 
+Acne,"Pimples, blackheads, whiteheads, or redness on the skin.",Dermatology 
+Psoriasis,"Red, scaly patches on the skin, or itching and burning sensations.",Dermatology 
+Eczema,"Dry, itchy, or inflamed skin, or small, raised bumps on the skin.",Dermatology

@@ -40,6 +40,21 @@ async def read_patient():
     df = pd.read_csv("knowledge/appointments.csv")
     return df.to_html()
 
+@router.get("/csv/refresh")
+async def read_patient():
+    try:
+        appt = pd.read_csv("knowledge/backup/appointments.csv")
+        appt.to_csv("knowledge/appointments.csv", index=False)
+
+        dr = pd.read_csv("knowledge/backup/doctor_timeslot.csv")
+        dr.to_csv("knowledge/doctor_timeslot.csv", index=False)
+        
+        patient = pd.read_csv("knowledge/backup/patient.csv")
+        patient.to_csv("knowledge/patient.csv", index=False)
+        return "CSV refreshed succcessfully"
+    except Exception as e:
+        return f"Refresh failed {e}"
+
 @router.post("/api/agent_flow")
 def flow(request: AgentRequest) -> AgentResponse:
     history = request.history[:LIMIT_WINDOW]
