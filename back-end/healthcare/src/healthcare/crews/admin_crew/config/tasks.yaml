@@ -8,7 +8,6 @@ route_task:
     Review the conversation with the user above and identified missing information required to proceed with doctor's appointment.
     You must return either one of the following - ['symptoms','background','clarify','schedule','complete']
     The instruction for each of the item is as follows:
-    clarify - return this when the latest user's information is not enough or not understandable.
     symptoms - return this when symptoms of illness has NOT been describe in conversation.
     background - return this when user have not mentioned name, age and insurance name does NOT exist in conversation.
     schedule - return this  when other information is completed and it's time to proceed with scheduling appointment with doctor.
@@ -20,14 +19,15 @@ route_task:
 collect_task:
   description: >
     {context}
-    Your task is to collect {task} information. Based on the conversation and guidelines provided, return a question to request information from the user. You must ask one question at a time. Return only necessary question for example of only name is missing only ask for name.
+    Your task is to collect {task} information. Based on the conversation and guidelines provided, return a question to request information from the user.
     Guidelines:
     symptoms - question about user's health issues he or her is facing.
-    background - make sure request for either one of these - name, age or insurance name.
+    background - request for name, age and insurance name.
     schedule - request prefered time.
-    clarify - rephrase your question. you can refer to latest question in conversation.
+    You must NOT return the same question!
   expected_output: >
     Return text ONLY without any quotes.
+    
   agent: healthcare_admin
 
 extract_task:

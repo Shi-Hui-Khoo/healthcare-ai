@@ -1,11 +1,5 @@
 ﻿appointment_id,doctor_id,patient_id,patient_symptom,insurance,date,time
-1,2,5,heart ache,Allianz,12/02/2025,9:00 AM
-2,5,1,skin rashes,AIA,12/02/2025,9:00 AM
-3,3,2,ear pain,,12/02/2025,1:00 PM
 4,6,3,heart discomfort,Prudential,12/02/2025,11:00 AM
 5,9,8,skin rashes,AIA,12/02/2025,10:00 AM
-6,2,9,heart ache,AIA,12/02/2025,1:00 PM
-7,4,10,headache,Allianz,12/02/2025,3:00 PM
 8,5,6,skin bumps,Prudential,12/02/2025,12:00 PM
 9,5,7,dry skin,,12/02/2025,11:00 AM
-10,6,4,heart discomfort,,12/02/2025,1:00 PM

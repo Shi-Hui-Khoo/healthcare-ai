@@ -1,31 +1,14 @@
-﻿medical_condition_id,medical_condition_name,medical_condition_description,specialization
-1,Otitis Media,"Ear pain, fever, hearing loss, ear fullness, or discharge.",ENT
-2,Sinusitis,"Nasal congestion, facial pain, headaches, yellow or green discharge, or loss of smell.",ENT
-3,Tonsillitis,"Sore throat, swollen tonsils, white patches on tonsils, fever, or difficulty swallowing.",ENT
-4,Laryngitis,"Hoarse voice, sore throat, coughing, or difficulty speaking.",ENT
-5,Meniere's Disease,"Vertigo, tinnitus, hearing loss, ear fullness, or balance problems.",ENT
-6,Nasal Polyps,"Nasal congestion, loss of smell, facial pain, or difficulty breathing.",ENT
-7,Earwax Buildup,"Itchy ears, hearing loss, ear fullness, or discharge.",ENT
-8,Vocal Cord Nodules,"Hoarse voice, vocal strain, or difficulty speaking.",ENT
-9,Sinus Headaches,"Headaches, facial pain, or pressure in the cheeks and forehead.",ENT
-10,Hearing Loss,"Difficulty hearing, ringing in the ears, or feeling like ears are plugged.",ENT
-11,Hypertension,"Headaches, dizziness, nosebleeds, or shortness of breath.",Cardiology
-12,Atrial Fibrillation,"Irregular heartbeat, palpitations, shortness of breath, or fatigue.",Cardiology
-13,Coronary Artery Disease,"Chest pain, shortness of breath, fatigue, or pain in the arms or legs.",Cardiology
-14,Heart Failure,"Shortness of breath, fatigue, swelling in the legs, or rapid heartbeat.",Cardiology
-15,Cardiac Arrhythmia,"Irregular heartbeat, palpitations, dizziness, or shortness of breath.",Cardiology
-16,Myocardial Infarction,"Chest pain, shortness of breath, cold sweats, or lightheadedness.",Cardiology
-17,Cardiomyopathy,"Shortness of breath, fatigue, swelling in the legs, or rapid heartbeat.",Cardiology
-18,Peripheral Artery Disease,"Leg pain, cramping, or weakness when walking.",Cardiology
-19,Deep Vein Thrombosis,"Swelling, pain, or warmth in the legs, or difficulty walking.",Cardiology
-20,Pulmonary Embolism,"Chest pain, shortness of breath, or coughing up blood.",Cardiology
-21,Acne,"Pimples, blackheads, whiteheads, or redness on the skin.",Dermatology
-22,Psoriasis,"Red, scaly patches on the skin, or itching and burning sensations.",Dermatology
-23,Eczema,"Dry, itchy, or inflamed skin, or small, raised bumps on the skin.",Dermatology
-24,Rosacea,"Redness, flushing, or acne-like symptoms on the face, or visible blood vessels.",Dermatology
-25,Skin Cancer,"New or changing moles, or growths on the skin that bleed or don't heal.",Dermatology
-26,Melasma,"Dark patches on the skin, often on the face, or discoloration.",Dermatology
-27,Seborrheic Dermatitis,"Red, itchy, or flaky skin on the scalp, face, or torso.",Dermatology
-28,Vitiligo,"White patches on the skin, or loss of skin pigment.",Dermatology
-29,Warts,"Small, rough growths on the skin, or itching or burning sensations.",Dermatology
-30,Keratosis Pilaris,"Small, rough patches on the skin, often on the arms or legs, or dry skin.",Dermatology
+﻿medical_condition_name,medical_condition_description,specialization 
+Otitis Media,"Ear pain, fever, hearing loss, ear fullness, or discharge.",ENT 
+Nasal Polyps,"Nasal congestion, loss of smell, facial pain, or difficulty breathing.",ENT 
+Vocal Cord Nodules,"Hoarse voice, vocal strain, or difficulty speaking.",ENT 
+Sinus Headaches,"Headaches, facial pain, or pressure in the cheeks and forehead.",ENT 
+Hearing Loss,"Difficulty hearing, ringing in the ears, or feeling like ears are plugged.",ENT 
+Hypertension,"Headaches, dizziness, nosebleeds, or shortness of breath.",Cardiology 
+Cardiomyopathy,"Shortness of breath, fatigue, swelling in the legs, or rapid heartbeat.",Cardiology 
+Peripheral Artery Disease,"Leg pain, cramping, or weakness when walking.",Cardiology 
+Deep Vein Thrombosis,"Swelling, pain, or warmth in the legs, or difficulty walking.",Cardiology 
+Pulmonary Embolism,"Chest pain, shortness of breath, or coughing up blood.",Cardiology 
+Acne,"Pimples, blackheads, whiteheads, or redness on the skin.",Dermatology 
+Psoriasis,"Red, scaly patches on the skin, or itching and burning sensations.",Dermatology 
+Eczema,"Dry, itchy, or inflamed skin, or small, raised bumps on the skin.",Dermatology

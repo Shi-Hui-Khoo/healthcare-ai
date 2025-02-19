@@ -23,7 +23,7 @@ class UpdateCSV(BaseTool):
     def _run(self, appointment: str) -> str:
         info = json.loads(appointment)
         print("Extracted information - ",info)
-        missing_keys = [ x for x in info.keys() if x in self.essential_keys]
+        missing_keys = [ x for x in info.keys() if x not in self.essential_keys]
         print("Missing information - ",missing_keys)
         # Implementation goes here
         try:
@@ -41,7 +41,7 @@ class UpdateCSV(BaseTool):
             appt_csv_path = "knowledge/appointments.csv"
             appt_df = pd.read_csv(appt_csv_path)
             dr_df = pd.read_csv("knowledge/doctor.csv")
-            doctor_id = dr_df[dr_df.doctor_name.str.strip() == 'Dr. John Smith'].doctor_id.iloc[0]
+            doctor_id = dr_df[dr_df.doctor_name.str.strip() == info['dr_name'] ].doctor_id.iloc[0]
             doctor_id = str(doctor_id)
             #columns - appointment_id,doctor_id,patient_id,patient_symptom,insurance,date,time
             appt_df.loc[len(appt_df)] = [patient_id, doctor_id, info['symptoms'], info['insurance_name'], info['appt_dat'], info['appt_time']]

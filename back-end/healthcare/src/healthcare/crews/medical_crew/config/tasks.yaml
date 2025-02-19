@@ -4,7 +4,7 @@ get_medical_reference:
     -------------\n
     {conversation}
     -------------\n
-    Based on symptoms describe in conversation, use the tool to match relevant medical condition.
+    Based on symptoms describe in conversation, use the tool to match relevant medical condition in 'knowledge/medical_condition.csv''.
     Make sure to include all information from extracted csv.
   expected_output: >
     Return text in csv format.
@@ -25,8 +25,11 @@ classify_illness_task:
 
 get_suggested_doctor:
   description: >
-    Based on classified illness, use the tool to extract doctors with relevant specialization.
-    Make sure to include all information from extracted csv.
+    Based on classified illness and symptoms, use the tool to extract doctors information with relevant specialization from 'knowledge/doctor.csv'.
+    For example if the classified illness is 'Eczema' find a doctor with 'Dermatology' specialization since its highly related.
+    You can reword the illness to match available doctors.
+    You can also use the most relevant if there is no exact match.
+    Make sure to include the doctors id.
   expected_output: >
     Return text in csv format.
   agent: csv_agent
@@ -40,12 +43,22 @@ get_suggested_doctor:
 
 get_doctor_timeslot_task:
   description: >
-    Based on the doctors extracted. Extract doctors' timeslot based on their id.
-    Using the extracted and combined information, suggest available timeslot to user.
-    Reform the information as question to the user to get their preferred timeslot without mentioning their illness.
-    Briefly mention the doctor is an expert to treat the symptoms.
-    Make sure to return information ONLY from extracted CSV not your general knowledge.
+    The knowledge/doctor_timeslot.csv represent the doctors available time.
+    Based on the doctor_id extracted earlier from 'knowledge/doctor.csv', use the tool to get available timeslot in 'knowledge/doctor_timeslot.csv' using the doctor_id.
+    Combine the information from both tool output as one CSV.
+    Your CSV must contain doctors name and available timeslot.
+    You must only provide information from the tool output!
   expected_output: >
-    Return text with bullet points. For example "Based on doctor's expertise, I recommend the following doctor for your consultation. They are experienced in treating symptoms like itchy, flaky skin. Here's dermatology doctors available: * Dr Karim (2PM-4PM) ...". Dr Karim is just an example.
+    Return text in CSV format.
   agent: csv_agent
 
+suggest_timeslot:
+  description: >
+    Based on the provided doctors name and timeslot. 
+    Reform the information as a question for user to get their preferred timeslot without mentioning their illness.
+    Briefly mention the doctor is an expert to treat the symptoms.
+    You must suggest doctors ONLY from extracted CSV not your general knowledge.
+  expected_output: >
+    Return doctors name and timeslot in text with bullet points. Start with brief explaination for example "Based on doctor's expertise, I recommend the following doctor for your consultation. They are experienced in treating symptoms like itchy, flaky skin. ..."
+    For the timeslot use this format "(1:00PM - 2:00PM)"
+  agent: medical_assistant

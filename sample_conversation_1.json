@@ -8,25 +8,29 @@
             "n": true
         },
         {
-            "a": "To book an appointment, could you please tell me your name and age so I can start collecting some background information about you?"
+            "a": "Can you please tell me your name, age, and insurance provider so I can gather some background information to assist with booking an appointment for you?"
         },
         {
-            "u": "My name is ammar and I'm 27 years old male",
+            "u": "My name is Ammar, Im 27years old male. I have no insurance",
             "n": true
         },
         {
-            "a": "To better assist you, could you please tell me what symptoms or health issues you are currently experiencing that prompt you to book an appointment?"
+            "a": "Can you please describe the health issues you are currently facing or the symptoms you are experiencing that prompted you to book an appointment with us?"
         },
         {
-            "u": "I have a very itchy skin and the itchy area is swollen and starts to irritating me",
+            "u": "I have a dry itchy skin and the itchy area is inflammed and starts to irritating me",
             "n": true
         },
         {
-            "a": "Based on the doctor's expertise, I recommend the following dermatologists for your consultation. They are experienced in treating symptoms like dry, itchy, or inflamed skin, or small, raised bumps on the skin. Here are the available dermatologists timeslots: * Dr. Robert Nguyen (3:00 PM) * Dr. Robert Nguyen (4:00 PM) * Dr. Emily Davis"
+            "a": "Based on the doctor's expertise, I recommend the following doctors for your consultation. They are experienced in treating symptoms like itchy, flaky skin. Please select a doctor and timeslot that works best for you: \n• Dr. Robert Nguyen - (3:00PM - 4:00PM, 4:00PM - 5:00PM) \n• Dr. David Kim - (1:00PM - 2:00PM, 4:00PM - 5:00PM, 5:00PM - 6:00PM) \n• Dr. Emily Davis - (11:00AM - 12:00PM)"
         },
         {
-            "u": "I prefer Dr. Nguyen 3PM",
+            "u": "I prefer Dr. Robert Nguyen 3:00PM",
             "n": true
+        },
+{
+            "a": "Dear Ammar, \nyour appointment has been booked with the following details: \n* Doctor's Name: Dr. Robert Nguyen \n* Date: 16/02/2025 \n * Time: 3:00 PM \n* Reason for Visit: You are experiencing dry itchy skin, inflamed, and irritating symptoms. \nPlease come 15 minutes earlier to be ready and complete any necessary paperwork before your appointment. \nAdditionally, please note that we did not receive your insurance information, so you may want to bring your insurance card or relevant documents with you to the appointment if you have them. \nIf you have any questions or concerns, please do not hesitate to reach out to us. We look forward to seeing you on the 16th of February."
         }
+
     ]
 }

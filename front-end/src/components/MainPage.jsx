@@ -25,6 +25,7 @@ const MainPage = () => {
     integrationID: "01fb7989-3535-4a77-a4e6-de11d8f0fbef", // The ID of this integration.
     region: "us-south", // The region your integration is hosted in.
     serviceInstanceID: "8a018efa-7da0-4235-babc-b39b6ffd265b", // The ID of your service instance.
+    showRestartButton: true,
     onLoad: async (instance) => { await instance.render(); }
   };
   setTimeout(function(){
