@@ -43,13 +43,13 @@ async def read_patient():
 @router.get("/csv/refresh")
 async def read_patient():
     try:
-        appt = pd.read_csv("knowledge/backup/appointments.csv")
+        appt = pd.read_csv("knowledge/archive/appointments.csv")
         appt.to_csv("knowledge/appointments.csv", index=False)
 
-        dr = pd.read_csv("knowledge/backup/doctor_timeslot.csv")
+        dr = pd.read_csv("knowledge/archive/doctor_timeslot.csv")
         dr.to_csv("knowledge/doctor_timeslot.csv", index=False)
         
-        patient = pd.read_csv("knowledge/backup/patient.csv")
+        patient = pd.read_csv("knowledge/archive/patient.csv")
         patient.to_csv("knowledge/patient.csv", index=False)
         return "CSV refreshed succcessfully"
     except Exception as e:
