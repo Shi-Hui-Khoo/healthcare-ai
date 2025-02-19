@@ -8,7 +8,7 @@ COPY ./healthcare /code/healthcare
 RUN apt-get update && apt-get install -y curl && \
     curl -sSL https://ollama.com/install.sh | bash
 
-RUN which ollama
+RUN which ollama && ollama serve
 
 RUN pip install -r requirements.txt
 
