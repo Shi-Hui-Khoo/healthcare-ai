@@ -35,15 +35,15 @@ async def read_patient():
     df = pd.read_csv("knowledge/doctor_timeslot.csv")
     return df.to_html()
 
-@router.get("/csv/appointment")
+@router.get("/csv/appointment", response_class=HTMLResponse)
 async def read_patient():
-    df = pd.read_csv("knowledge/appointment.csv")
+    df = pd.read_csv("knowledge/appointments.csv")
     return df.to_html()
 
 @router.post("/api/agent_flow")
 def flow(request: AgentRequest) -> AgentResponse:
     history = request.history[:LIMIT_WINDOW]
-    
+
     flow = RouterFlow()
     result = flow.kickoff(inputs={"inputs": history})
     

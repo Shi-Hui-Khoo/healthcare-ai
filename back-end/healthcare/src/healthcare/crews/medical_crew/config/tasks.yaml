@@ -46,6 +46,6 @@ get_doctor_timeslot_task:
     Briefly mention the doctor is an expert to treat the symptoms.
     Make sure to return information ONLY from extracted CSV not your general knowledge.
   expected_output: >
-    Return text with bullet points. For example "Based on doctor's expertise, I recommend the following doctor for your consultation. They are experienced in treating symptoms like itchy, flaky skin. Here's dermatology doctors available: * Dr Karim (2PM-4PM) ..."
+    Return text with bullet points. For example "Based on doctor's expertise, I recommend the following doctor for your consultation. They are experienced in treating symptoms like itchy, flaky skin. Here's dermatology doctors available: * Dr Karim (2PM-4PM) ...". Dr Karim is just an example.
   agent: csv_agent
 

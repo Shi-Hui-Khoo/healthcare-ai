@@ -38,7 +38,7 @@ class UpdateCSV(BaseTool):
             user_df.to_csv(user_csv_path, index=False)
 
             #Update appt csv
-            appt_csv_path = "knowledge/appointment.csv"
+            appt_csv_path = "knowledge/appointments.csv"
             appt_df = pd.read_csv(appt_csv_path)
             dr_df = pd.read_csv("knowledge/doctor.csv")
             doctor_id = dr_df[dr_df.doctor_name.str.strip() == 'Dr. John Smith'].doctor_id.iloc[0]
