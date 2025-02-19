@@ -53,7 +53,7 @@ class UpdateCSV(BaseTool):
             # columns - doctor_id,date,time
             # removes available timeslot
             timeslot_df = timeslot_df[~(timeslot_df.doctor_id.astype(str) == doctor_id) & 
-                        (timeslot_df.date == info['appt_date']) & 
+                        (timeslot_df.date == "12/02/2025") & 
                         (timeslot_df.time == info['appt_time'])]
             timeslot_df.to_csv(timeslot_csv_path, index=False)
 

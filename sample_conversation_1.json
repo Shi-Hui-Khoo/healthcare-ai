@@ -1,0 +1,32 @@
+{
+    "history": [
+        {
+            "a": "Welcome, how can I assist you?"
+        },
+        {
+            "u": "I want to book an appointment",
+            "n": true
+        },
+        {
+            "a": "To book an appointment, could you please tell me your name and age so I can start collecting some background information about you?"
+        },
+        {
+            "u": "My name is ammar and I'm 27 years old male",
+            "n": true
+        },
+        {
+            "a": "To better assist you, could you please tell me what symptoms or health issues you are currently experiencing that prompt you to book an appointment?"
+        },
+        {
+            "u": "I have a very itchy skin and the itchy area is swollen and starts to irritating me",
+            "n": true
+        },
+        {
+            "a": "Based on the doctor's expertise, I recommend the following dermatologists for your consultation. They are experienced in treating symptoms like dry, itchy, or inflamed skin, or small, raised bumps on the skin. Here are the available dermatologists timeslots: * Dr. Robert Nguyen (3:00 PM) * Dr. Robert Nguyen (4:00 PM) * Dr. Emily Davis"
+        },
+        {
+            "u": "I prefer Dr. Nguyen 3PM",
+            "n": true
+        }
+    ]
+}
