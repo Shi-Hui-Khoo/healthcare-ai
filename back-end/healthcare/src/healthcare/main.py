@@ -42,6 +42,7 @@ if __name__ == "__main__":
     q = ""
     flow = RouterFlow()
 
+    # Uncomment when you want to test directly from CLI
     # while q != "exit":
     #     q = input()
     #     inputs.append({"u": q})

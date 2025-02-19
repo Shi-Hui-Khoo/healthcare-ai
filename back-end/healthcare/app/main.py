@@ -2,7 +2,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Request
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
-import requests
 from .base import router
 
 import logging
@@ -31,8 +30,8 @@ async def openapi(request: Request):
         "version": "0.1.0",
     }
     openapi["servers"] = [{"url": url, "description": "watsonx.ai endpoint"}]
+    
     # TODO: Update to remove anyof func, not support by wxAsssistant
-
     # if "components" in openapi:
         # del openapi["components"]["schemas"]["HTTPValidationError"]
         # del openapi["components"]["schemas"]["ValidationError"]

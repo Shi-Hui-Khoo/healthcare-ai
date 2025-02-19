@@ -30,6 +30,10 @@
         },
 {
             "a": "Dear Ammar, \nyour appointment has been booked with the following details: \n* Doctor's Name: Dr. Robert Nguyen \n* Date: 16/02/2025 \n * Time: 3:00 PM \n* Reason for Visit: You are experiencing dry itchy skin, inflamed, and irritating symptoms. \nPlease come 15 minutes earlier to be ready and complete any necessary paperwork before your appointment. \nAdditionally, please note that we did not receive your insurance information, so you may want to bring your insurance card or relevant documents with you to the appointment if you have them. \nIf you have any questions or concerns, please do not hesitate to reach out to us. We look forward to seeing you on the 16th of February."
+        },
+        {
+            "u": "Book my time with Dr. Robert Nguyen 3:00PM",
+            "n": true
         }
 
     ]

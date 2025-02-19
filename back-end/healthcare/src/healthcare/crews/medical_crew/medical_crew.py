@@ -9,10 +9,6 @@ import os
 
 load_dotenv(find_dotenv())
 
-# If you want to run a snippet of code before or after the crew starts,
-# you can use the @before_kickoff and @after_kickoff decorators
-# https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
-
 # Parameters
 parameters = {"decoding_method": "greedy", "max_new_tokens": 500}
 llm = LLM(
@@ -30,24 +26,13 @@ function_calling_llm = LLM(
     apikey=os.getenv("WATSONX_API_KEY", None),
 )
 
-# llm = LLM(
-#     model="ollama/llama3:70b",
-#     base_url="http://localhost:11434"
-# )
-
-
 @CrewBase
 class MedicalCrew:
-    # Learn more about YAML configuration files here:
-    # Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
-    # Tasks: https://docs.crewai.com/concepts/tasks#yaml-configuration-recommended
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
 
-    # If you would like to add tools to your agents, you can learn more about it here:
-    # https://docs.crewai.com/concepts/agents#agent-tools
-
     # tools
+    # Using ollama atm since watson has an unresolved issue -https://github.com/crewAIInc/crewAI/issues/1770
     medical_condition_reference = CSVSearchTool(
         csv="knowledge/medical_condition.csv",
         description="Use this tool to extract medical condition from CSV",

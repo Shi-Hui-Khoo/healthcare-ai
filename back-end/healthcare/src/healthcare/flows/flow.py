@@ -29,8 +29,7 @@ class RouterFlow(Flow[CollectState]):
     # router still broken atm
     @listen(converse)
     def route_task(self):
-        # inputs = "\n".join([ f"user: {c['u'] if 'u' in c else ''}\n assistant: {c['a'] if 'a' in c else ''}" for c in self.state.inputs])
-
+        #Routing aka planning task.
         result = (
             AdminCrew().crew(mode='route').kickoff(inputs={"conversation": self.state.inputs})
         )
@@ -42,6 +41,7 @@ class RouterFlow(Flow[CollectState]):
     def run_task(self):
         print("run task")
         if self.state.route in ["background", "symptoms", "clarify"]:
+            # Information collection task
             result = (
                 AdminCrew()
                 .crew(mode='collect')
@@ -54,6 +54,7 @@ class RouterFlow(Flow[CollectState]):
                 )
             )
         elif self.state.route == 'schedule':
+            # Timeslot suggestion task
             result = (
             MedicalCrew()
             .crew()
@@ -61,6 +62,7 @@ class RouterFlow(Flow[CollectState]):
         )
         elif self.state.route == 'complete':
             print("conversation completed.")
+            # Extract, update and summarize task
             result = (
                 AdminCrew()
                 .crew(mode='update')
@@ -81,6 +83,3 @@ class RouterFlow(Flow[CollectState]):
         if self.state.query:
             return self.state.query
         return """Sorry. We could not understand your query. Could please rephrase your question?"""
-        # extract
-        # update csv
-        # summarize

@@ -4,9 +4,9 @@ llm = Model(
     model_id="meta-llama/llama-3-3-70b-instruct",
     credentials={
         "url": "https://us-south.ml.cloud.ibm.com",
-        "apikey": "",
+        "apikey": "<YOUR_API_KEY>",
     },
-    project_id="",
+    project_id="<YOUR_PROJECT_ID>",
     params=parameters,
 )
 

@@ -7,10 +7,6 @@ import os
 
 load_dotenv(find_dotenv())
 
-# If you want to run a snippet of code before or after the crew starts,
-# you can use the @before_kickoff and @after_kickoff decorators
-# https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
-
 # Parameters
 parameters = {"decoding_method": "greedy", "max_new_tokens": 500}
 llm = LLM(
@@ -20,7 +16,6 @@ llm = LLM(
     project_id=os.getenv("WATSONX_PROJECT_ID", None),
     apikey=os.getenv("WATSONX_API_KEY", None),
 )
-
 
 @CrewBase
 class AdminCrew:
@@ -70,8 +65,6 @@ class AdminCrew:
     @crew
     def crew(self, mode='route') -> Crew:
         """Creates the Healthhive crew"""
-        # To learn how to add knowledge sources to your crew, check out the documentation:
-        # https://docs.crewai.com/concepts/knowledge#what-is-knowledge
         if mode == 'route':
             return Crew(
                 agents=[self.healthcare_admin()],
