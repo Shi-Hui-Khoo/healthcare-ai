@@ -7,7 +7,7 @@ import os
 import pandas as pd
 
 router = APIRouter()
-flow = RouterFlow()
+
 
 LIMIT_WINDOW = 15 
 
@@ -43,10 +43,11 @@ async def read_patient():
 @router.post("/api/agent_flow")
 def flow(request: AgentRequest) -> AgentResponse:
     history = request.history[:LIMIT_WINDOW]
-
+    
+    flow = RouterFlow()
     result = flow.kickoff(inputs={"inputs": history})
     
-    return result
+    return {"response":result}
 
 # def openapi_update(request: Request):
 #     url = request.base_url._url[:-1]
